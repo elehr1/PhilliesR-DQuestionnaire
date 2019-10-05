@@ -4,40 +4,27 @@ DESCRIPTION
 
 This project is inteded to look at a new technology the Philadelphia Phillies are evaluating to use to measure the spin rate
 of pitches. The Research and Development department's goal is to have the new technology be comparable in accuracy to the 
-current baseline technology employed. Through an in-depth analysis, I have advice the department to not pursue this
+current baseline technology employed. Through an in-depth analysis, I have advised the department to not pursue this
 new technology. 
 
 GETTING STARTED
 
+Pull the data from the Original Data file into R Studio. You can do this by first pulling the data into Excel, and then importing the dataset from Excel into R Studio. 
 
+PREREQUISITES
 
-Prerequisites
-What things you need to install the software and how to install them
+You will need to install the packages "readxl" and "ggplot2", in order to properly run the code. 
+First run the function install.packages("readxl"), then activate the package through the function library(readxl). 
+This will activate the package and allow you to use it properly. Repeat the steps above for the package "ggplot2". 
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
+RUNNING CODE
 
-Say what the step will be
+To run the code, click the tab "Run" with a green arrow next to it to run each line of code. After each line is ran, be sure to look at the information it produces. 
 
-Give the example
-And repeat
+BUILT WITH
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+R Studio
 
-Running the tests
-Explain how to run the automated tests for this system
+AUTHOR
 
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-
-Built With
+Eddie Lehr
