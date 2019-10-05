@@ -14,18 +14,24 @@ sd(SpinRate$BaselineTech)
 ggplot(SpinRate, aes(x=Pitch, y=BaselineTech)) +
   geom_line() +
   theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(breaks=c(200,400,600,800,1000,1200,1400)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
   labs(x="Pitch Number", y="Spin Rate (RPM)", title = "Spin Rates for Baseline Technology")
 
 ggplot(SpinRate, aes(x=Pitch,y=NewTech)) +
   geom_line(color = "Red") + 
   theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(breaks=c(200,400,600,800,1000,1200,1400)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
   labs(x="Pitch Number", y="Spin Rate (RPM)", title = "Spin Rates for New Technology")
 
 ggplot(SpinRate) +
   geom_line(aes(x=Pitch,y=BaselineTech)) +
   geom_line(aes(x=Pitch,y=NewTech), color = "Red") +
   theme(plot.title = element_text(hjust = 0.5)) +
-  labs(x="Pitch Number", y="Spin Rate (RPM)", title= "Spin Rate Overlays of Different Technology")
+  scale_x_continuous(breaks=c(200,400,600,800,1000,1200,1400)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
+  labs(x="Pitch Number", y="Spin Rate (RPM)", title= "Spin Rate Overlays of Each Technology")
 
 #This is extremely messy, decided to  break down the 1279 pitches into 4 segments of roughly 320 pitches
 
@@ -34,28 +40,35 @@ SecondSegment <- SpinRate[321:641,1:3]
 ThirdSegment <- SpinRate[642:962,1:3]
 FourthSegment <- SpinRate[963:1279,1:3]
 
-#Plot Overlays of the two pieces of technology for each segment
+#Plot Overlays of the two pieces of technology for each segment, with the black line representing 
+#the baseline technology, and the red line representing the new technology 
 
 ggplot(FirstSegment) +
    geom_line(aes(x=Pitch,y=BaselineTech)) +
    geom_line(aes(x=Pitch,y=NewTech), color = "Red") +
    theme(plot.title = element_text(hjust = 0.5)) +
+   scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
    labs(x="Pitch Number", y="Spin Rate (RPM)", title= "First Segment Overlays of Different Technology")
 
 ggplot(SecondSegment) +
   geom_line(aes(x=Pitch,y=BaselineTech)) +
   geom_line(aes(x=Pitch,y=NewTech), color = "Red") +
   theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
   labs(x="Pitch Number", y="Spin Rate (RPM)", title= "Second Segment Overlays of Different Technology")
 
 ggplot(ThirdSegment) +
   geom_line(aes(x=Pitch,y=BaselineTech)) +
   geom_line(aes(x=Pitch,y=NewTech), color = "Red") +
   theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
   labs(x="Pitch Number", y="Spin Rate (RPM)", title= "Third Segment Overlays of Different Technology")
 
 ggplot(FourthSegment) +
   geom_line(aes(x=Pitch,y=BaselineTech)) +
   geom_line(aes(x=Pitch,y=NewTech), color = "Red") +
   theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(breaks=c(500,1000,1500,2000,2500)) +
   labs(x="Pitch Number", y="Spin Rate (RPM)", title= "Fourth Segment Overlays of Different Technology")
+
+
